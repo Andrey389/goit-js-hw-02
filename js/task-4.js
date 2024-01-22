@@ -1,28 +1,28 @@
-function getShippingCost(country, price) {
+function getShippingCost(country) {
+  let price;
   switch (country) {
     case `Australia`:
-      makeMessage = `Shipping to ${country} will cost ${price} credits`;
+      price = 170;
       break;
     case `China`:
-      makeMessage = `Shipping to ${country} will cost ${price} credits`;
+      price = 100;
       break;
     case `Chile`:
-      makeMessage = `Shipping to ${country} will cost ${price} credits`;
+      price = 250;
       break;
     case `Jamaica`:
-      makeMessage = `Shipping to ${country} will cost ${price} credits`;
+      price = 120;
       break;
 
     default:
-      makeMessage = `Sorry, there is no delivery to your country`;
-      break;
+      return `Sorry, there is no delivery to your country`;
   }
-  console.log(makeMessage);
+  return `Shipping to ${country} will cost ${price} credits`;
 }
 
-getShippingCost('Australia', 170); // "Shipping to Australia will cost 170 credits"
-getShippingCost('Germany'); // "Sorry, there is no delivery to your country"
-getShippingCost('China', 100); // "Shipping to China will cost 100 credits"
-getShippingCost('Chile', 250); // "Shipping to Chile will cost 250 credits"
-getShippingCost('Jamaica', 120); // "Shipping to Jamaica will cost 120 credits"
-getShippingCost('Sweden'); // "Sorry, there is no delivery to your country"
+console.log(getShippingCost('Australia')); // "Shipping to Australia will cost 170 credits"
+console.log(getShippingCost('Germany')); // "Sorry, there is no delivery to your country"
+console.log(getShippingCost('China')); // "Shipping to China will cost 100 credits"
+console.log(getShippingCost('Chile')); // "Shipping to Chile will cost 250 credits"
+console.log(getShippingCost('Jamaica')); // "Shipping to Jamaica will cost 120 credits"
+console.log(getShippingCost('Sweden')); // "Sorry, there is no delivery to your country"
